@@ -1,0 +1,11 @@
+INSERT INTO Seller (id, seller_name, email, address, user_id)
+VALUES (1, 'ABC Corp', 'abccorp@example.com', '123 Main St', 11),
+       (2, 'XYZ Inc', 'xyzinc@example.com', '456 Oak Ave', 12),
+       (3, 'Smith Co', 'smithco@example.com', '789 Maple Dr', 13),
+       (4, 'Jones Enterprises', 'jonesent@example.com', '321 Pine St', 14),
+       (5, 'Wilson LLC', 'wilsonllc@example.com', '654 Elm St', 15),
+       (6, 'Miller & Sons', 'millerandsons@example.com', '987 Cedar Dr', 16),
+       (7, 'Johnson & Co', 'johnsonandco@example.com', '246 Willow Ave', 17),
+       (8, 'Brown Industries', 'brownind@example.com', '135 Oak St', 18),
+       (9, 'Green Solutions', 'greensol@example.com', '864 Maple Dr', 19),
+       (10, 'Davis Enterprises', 'davisent@example.com', '975 Pine St', 20);

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Buyer Profile</title>
+    <link rel="stylesheet" href="buyer_user_profile.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Buyer Profile</h1>
+      <div class="profile">
+        <div class="picture">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture">
+          <input type="file" id="picture" name="picture">
+          <label for="picture">Change Picture</label>
+        </div>
+        <div class="info">
+          <h2>Name: John Doe</h2>
+          <p>Email: johndoe@example.com</p>
+          <p>Credit Card: **** **** **** 1234</p>
+          <input type="text" id="credit-card" name="credit-card" placeholder="New Credit Card Number">
+          <button type="submit">Change Credit Card</button>
+          <input type="password" id="password" name="password" placeholder="New Password">
+          <button type="submit">Change Password</button>
+        </div>
+      </div>
+      <h2>Bidding History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Deadline</th>
+            <th>Date Bought</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product A</td>
+            <td>$100</td>
+            <td>2023-04-15 12:00:00</td>
+            <td>2023-04-10 14:30:00</td>
+            <td>Bought</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Product B</td>
+            <td>$50</td>
+            <td>2023-04-11 12:00:00</td>
+            <td>-</td>
+            <td>Lost</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Product C</td>
+            <td>$75</td>
+            <td>2023-04-20 18:00:00</td>
+            <td>-</td>
+            <td>Active</td>
+            <td>
+              <input type="number" id="new-price" name="new-price" min="1" max="1000">
+              <button type="submit">Change Price</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

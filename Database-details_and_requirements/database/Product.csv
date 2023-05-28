@@ -1,0 +1,10 @@
+Insert into Product (P_id, Title, Description, Price, Seller_id) values (1, 'iPhone 12', 'Apple iPhone 12 with 256GB Storage', 1099.99, 'default_product.png', 1);
+Insert into Product (P_id, Title, Description, Price, Seller_id) values (2, 'Samsung Galaxy S21', 'Samsung Galaxy S21 with 128GB Storage', 799.99, 'default_product.png', 2);
+Insert into Product (P_id, Title, Description, Price, Seller_id) values (3, 'Sony Playstation 5', 'Sony Playstation 5 Gaming Console', 499.99, 'default_product.png', 3);
+Insert into Product (P_id, Title, Description, Price, Seller_id) values (4, 'Microsoft Surface Laptop 4', 'Microsoft Surface Laptop 4 with 512GB Storage', 1499.99, 'default_product.png', 4);
+Insert into Product (P_id, Title, Description, Price, Seller_id) values (5, 'Bose QuietComfort Earbuds', 'Bose QuietComfort Earbuds with Noise Cancellation', 279.99, 'default_product.png', 5);
+Insert into Product (P_id, Title, Description, Price, Seller_id) values (6, 'LG OLED TV', 'LG OLED TV with 65 inch Display', 1999.99, 'default_product.png', 6);
+Insert into Product (P_id, Title, Description, Price, Seller_id) values (7, 'Canon EOS R6', 'Canon EOS R6 Full-Frame Mirrorless Camera', 2499.99, 'default_product.png', 7);
+Insert into Product (P_id, Title, Description, Price, Seller_id) values (8, 'DJI Mavic Air 2', 'DJI Mavic Air 2 Drone with 48MP Camera', 799.99, 'default_product.png', 8);
+Insert into Product (P_id, Title, Description, Price, Seller_id) values (9, 'Nest Learning Thermostat', 'Nest Learning Thermostat for Smart Homes', 249.99, 'default_product.png', 9);
+Insert into Product (P_id, Title, Description, Price, Seller_id) values (10, 'Fitbit Sense', 'Fitbit Sense Smartwatch with Health Tracking', 299.99, 'default_product.png', 10);
