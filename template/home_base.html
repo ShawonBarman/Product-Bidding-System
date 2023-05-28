@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <section id="ProductListingPage">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="{% url 'home' %}">Product Listing Page</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto">
+					    <li class="nav-item ms-3">
+						    <a class="nav-link text-light fw-bolder" href="{% url 'home' %}">Home</a>
+					    </li>
+						<li class="nav-item ms-3">
+						    <a class="nav-link text-light fw-bolder" href="{% url 'profile' %}">Profile</a>
+					    </li>
+					    <li class="nav-item ms-3">
+						    <a class="nav-link text-light fw-bolder" href="#">About Us</a>
+					    </li>
+					    <li class="nav-item ms-3">
+						    <a class="nav-link text-light fw-bolder" href="#">Contact</a>
+					    </li>
+					    <li class="nav-item ms-3">
+						    <a class="nav-link text-light fw-bolder" href="{% url 'logout' %}">Sign out</a>
+					    </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+        {% block homeContent %}
+        {% endblock %}
+        <footer class="bg-dark text-light text-center">
+            <p class="py-4 fw-bolder">&copy; 2023 MyStore Inc.</p>
+        </footer>
+	</section>
+
+{% endblock %}

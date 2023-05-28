@@ -1,0 +1,4 @@
+(1) Needed Xampp software in your device
+(2) Needed one IDE (PyCharm / Visual Stdio Code)
+(3) install django: pip install django
+(4) install mysql: pip install mysqlclient

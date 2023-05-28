@@ -1,0 +1,139 @@
+{% extends 'home_base.html' %}
+
+{% block title %}
+    Buyer Profile Page
+{% endblock %}
+
+{% block homeContent %}
+    {% load static %}
+    <section id="buyerProfile" class="my-5">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <h1 class="text-center d-inline mb-5">Buyer Profile</h1>
+                <div class="col-lg-4 col-12 mt-3">
+                    <img src="{{ profile_pic.url }}" alt="Profile Picture" class="profile-picture mb-5" height="150px" width="150px">
+                    <form class="profilePicture"  enctype="multipart/form-data" method="POST">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="picture" name="picture" placeholder="New Credit Card Number">
+                        </div>
+                        <button type="submit">Change profile picture</button>
+                    </form>
+                </div>
+                <div class="col-lg-7 col-12">
+                    <div class="info">
+                        <h2 class="mb-4">Name: {{ name }}</h2>
+                        <p>{{ email }}</p>
+                        <p>Credit Card: **** **** **** 5678</p>
+                        <form class="mb-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="credit-card" name="credit-card" placeholder="New Credit Card Number">
+                                <span class="input-group-btn">
+                                    <button type="submit">Change Credit Card</button>
+                                </span>
+                            </div>
+                        </form>
+                        <p>Want to change your password?</p>
+                        <form class="mb-4">
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="New Password">
+                                <span class="input-group-btn">
+                                    <button type="submit">Change Password</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="biddingHistory" class="mb-5">
+        <div class="container">
+            <h2 class="mb-4">Bidding History</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Deadline</th>
+                        <th>Bid amount</th>
+                        <th>Date Bought</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for b in buyer_biding %}
+                        {% for key, value in buyer_bidding_product_lists.items %}
+                            {% if b.id == key %}
+                                <tr>
+                                    <td>
+                                        {% for k, v in value.items %}
+                                            {% if k == "title" %}
+                                                {{ v }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {% for k, v in value.items %}
+                                            {% if k == "price" %}
+                                                {{ v }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {% for k, v in value.items %}
+                                            {% if k == "end_date" %}
+                                                {{ v }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {% for k, v in value.items %}
+                                            {% if k == "amount" %}
+                                                {{ v }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {% for k, v in value.items %}
+                                            {% if k == "payment_time" %}
+                                                {{ v }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {% for k, v in value.items %}
+                                            {% if k == "status" %}
+                                                {{ v }}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {% for k, v in value.items %}
+                                            {% if k == "status" %}
+                                                {% if v == "Active" %}
+                                                    <form class="pricingForm" method="POST">
+                                                        {% csrf_token %}
+                                                        <div class="input-group">
+                                                            <input type="hidden" name="bid_id" value="{{b.id}}">
+                                                            <input type="number" class="form-control" id="new-price" name="new-price" min="1" max="1000">
+                                                            <span class="input-group-btn">
+                                                                <button type="submit">Change Bid Amount</button>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+{% endblock %}

@@ -1,0 +1,402 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+
+/* CSS code for signin page */
+
+#signIn .signin {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#signIn hr {
+    margin: 0 auto !important;
+    height: 3px;
+    background: rgb(0, 0, 0);
+}
+
+#signIn form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#signIn label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#signIn input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#signIn input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+#signIn input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+#signIn a {
+    color: #4CAF50;
+}
+
+#signIn a:hover {
+    color: #3e8e41;
+}
+
+
+/* CSS code for signup page */
+
+#signUp .signup {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#signUp hr {
+    margin: 0 auto !important;
+    height: 3px;
+    background: rgb(0, 0, 0);
+}
+
+#signUp form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#signUp label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#signUp input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+#signUp input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+#signUp input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+#signUp a {
+    color: #4CAF50;
+}
+
+#signUp a:hover {
+    color: #3e8e41;
+}
+
+
+/* css code product listing page */
+
+#ProductListingPage .navbar-brand {
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 20px 0;
+}
+
+#ProductListingPage .nav-link {
+    font-size: 18px;
+}
+
+#ProductListingPage .nav-link:hover {
+    color: #4CAF50 !important;
+}
+
+#ProductListingPage hr {
+    margin: 0 auto !important;
+    height: 3px;
+    background: rgb(0, 0, 0);
+}
+
+#ProductListingPage .product-item {
+    flex-basis: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+#ProductListingPage .product-item img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+#ProductListingPage .product-item button {
+    display: block;
+    padding: 10px 60px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+#ProductListingPage .product-item button:hover {
+    background-color: #4d4c4c;
+}
+
+#ProductListingPage footer p {
+    margin-bottom: 0;
+}
+
+
+/* css code for buyer profile */
+
+#buyerProfile .row {
+    margin: auto;
+    width: 80%;
+    padding: 30px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+#buyerProfile .profile-picture {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+#buyerProfile input {
+    padding: 10px;
+    border: none;
+    border-radius: 9px 0 0 9px;
+    background-color: #cccccc;
+    font-size: 16px;
+}
+
+#buyerProfile .profilePicture input {
+    border-radius: 9px !important;
+}
+
+
+/* Style the buttons */
+
+#buyerProfile button {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 0 9px 9px 0;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 190px;
+    font-weight: bolder;
+}
+
+#buyerProfile p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+/* Style the Bidding History table */
+
+#biddingHistory table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#biddingHistory th,
+#biddingHistorytd {
+    text-align: left;
+    padding: 8px 15px;
+}
+
+#biddingHistory th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#biddingHistory tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#biddingHistory td:last-child {
+    width: 30%;
+}
+
+#biddingHistory .pricingForm input {
+    border: none;
+    background-color: #cccccc;
+    font-size: 16px;
+    width: 80px;
+    height: 35px;
+}
+
+#biddingHistory .pricingForm button {
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bolder;
+    height: 35px;
+    padding: 0 10px;
+}
+
+
+/* CSS code for seller profile page */
+
+#sellerProfile .row {
+    margin: auto;
+    width: 80%;
+    padding: 30px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+#sellerProfile .profile-picture {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+#sellerProfile input {
+    padding: 10px;
+    border: none;
+    border-radius: 9px 0 0 9px;
+    background-color: #cccccc;
+    font-size: 16px;
+}
+
+#sellerProfile .profilePicture input {
+    border-radius: 9px !important;
+}
+
+
+/* Style the buttons */
+
+#sellerProfile button {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 0 9px 9px 0;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 190px;
+    font-weight: bolder;
+}
+
+#sellerProfile p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+/* Style the Selling History and Active Listings tables */
+
+#sellingHistory table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#sellingHistory th,
+#sellingHistory td {
+    padding: 8px;
+    width: 33.33%;
+}
+
+#sellingHistory th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#sellingHistory tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#addNewListing hr {
+    margin: 0 auto !important;
+    height: 3px;
+    background: rgb(0, 0, 0);
+}
+
+#addNewListing .addNewListForm {
+    width: 35%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    margin: auto;
+    border-radius: 10px;
+}
+
+#addNewListing .addNewListForm label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+#addNewListing .addNewListForm input {
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    height: 35px;
+}
+
+#addNewListing .addNewListForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bolder;
+    width: 100%;
+    margin: 10px 0 15px 0;
+}

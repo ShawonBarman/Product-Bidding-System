@@ -1,0 +1,46 @@
+{% extends 'home_base.html' %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block homeContent %}
+    {% load static %}
+    <div class="availableProduct mb-5">
+            <div class="container">
+                <h2 class="mt-5 text-center fw-bolder">Available Products</h2>
+                <hr class="w-50">
+                <div class="row g-5 mt-5">                    
+                    {% for x in data %}
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="product-item">
+                            <img src="{{ x.profile_pic.url }}" alt="Product Image" height="150px" width="150px">
+                            <h3 class="mt-4">{{ x.title }}</h3>
+                            <p>{{ x.description }}</p>
+                            <p class="my-3 fw-bolder">Price: {{ x.price }}</p>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <label for="bid" class="fw-bolder">Bid:</label>
+                                <input type="number" id="bid" name="bid" min="0">
+                                <input type="hidden" name="product_id" value="{{x.id}}">
+                                {% for b in max_bid %}
+                                    {% if x.id in b.keys %}
+                                        {% for value in b.values %}
+                                            <p class="my-2 fw-bolder">Previous max bid: {{ value }}</p>
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% for date in listing %}
+                                    {% if x.id == date.product_id %}
+                                        <p class="my-2 fw-bolder">Deadline: {{ date.end_date }}</p>
+                                    {% endif %}
+                                {% endfor %}
+                                <button type="submit" class="mt-4">Bid</button>
+                            </form>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}

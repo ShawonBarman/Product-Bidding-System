@@ -1,0 +1,138 @@
+{% extends 'home_base.html' %} {% block title %} Seller Profile Page {% endblock %} {% block homeContent %} {% load static %}
+<section id="sellerProfile" class="my-5">
+    <div class="container">
+        <div class="row d-flex justify-content-between">
+            <h1 class="text-center d-inline mb-5">Seller Profile</h1>
+            <div class="col-lg-4 col-12 mt-3">
+                <img src="{{ profile_pic.url }}" alt="Profile Picture" class="profile-picture mb-5">
+                <form class="profilePicture" enctype="multipart/form-data" method="POST">
+                    <div class="input-group mb-2">
+                        <input type="file" class="form-control" id="picture" name="picture" placeholder="New Credit Card Number">
+                    </div>
+                    <label for="picture">Change your profile picture by uploading a picture</label>
+                </form>
+            </div>
+            <div class="col-lg-7 col-12">
+                <div class="info">
+                    <h2 class="mb-4">Name: {{ name }}</h2>
+                    <p>{{ email }}</p>
+                    <p>Credit Card: **** **** **** 5678</p>
+                    <form class="mb-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="credit-card" name="credit-card" placeholder="New Credit Card Number">
+                            <span class="input-group-btn">
+                                    <button type="submit">Change Credit Card</button>
+                                </span>
+                        </div>
+                    </form>
+                    <p>Address: {{ address }}</p>
+                    <form class="mb-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="address" name="address" placeholder="New Address">
+                            <span class="input-group-btn">
+                                  <button type="submit">Change Address</button>
+                                </span>
+                        </div>
+                    </form>
+                    <p>Want to change your password?</p>
+                    <form class="mb-4">
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="New Password">
+                            <span class="input-group-btn">
+                                    <button type="submit">Change Password</button>
+                                </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="sellingHistory" class="mb-5">
+    <div class="container w-75">
+        <h2 class="mb-4">Selling History</h2>
+        <table class="mb-5">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in seller_products %}
+                <tr>
+                    <td>{{ product.title }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>
+                        {% for product_listing in seller_products_listing %} 
+			                    {% if product_listing.product_id == product.id %} 
+				                    {% if product_listing.status == "Bought" %} Sold {% endif %} 
+				                    {% if product_listing.status != "Bought" %} {{ product_listing.status }} {% endif %} 
+			                    {% endif %}
+                        {% endfor %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h2 class="mb-4">Active Listings</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Deadline</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product_listing in seller_products_listing %}
+                  {% if product_listing.status == "Active" %}
+                    <tr>
+                        <td>
+                          {% for product in seller_products %}
+                            {% if product.id == product_listing.product_id %}
+                              {{ product.title }}
+                            {% endif %}
+                          {% endfor %}
+                        </td>
+                        <td>
+                          {% for product in seller_products %}
+                            {% if product.id == product_listing.product_id %}
+                              {{ product.price }}
+                            {% endif %}
+                          {% endfor %}
+                        </td>
+                        <td>{{ product_listing.end_date }}</td>
+                    </tr>
+                  {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="addNewListing" class="mb-5">
+    <div class="container">
+        <h2 class="text-center">Add New Listing</h2>
+        <hr class="w-25">
+        <form class="addNewListForm mt-4" enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+            <label for="product-name">Product Name:</label>
+            <input type="text" class="form-control" id="product-name" name="product-name" required><br>
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" id="description" name="description"><br>
+            <label for="picture">Picture:</label>
+            <input type="file" class="form-control" id="picture" name="picture"><br>
+            <label for="price">Price:</label>
+            <input type="number" class="form-control" id="price" name="price" required><br>
+            <label for="deadline">Deadline:</label>
+            <input type="date" class="form-control" id="deadline" name="deadline" required><br>
+            <label for="status">Status:</label>
+            <input type="text" class="form-control" id="status" name="status" required><br>
+            <button type="submit">Add Listing</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'home_base.html' %}
+
+{% block title %}
+    Buyer Profile Error
+{% endblock %}
+
+{% block homeContent %}
+    {% load static %}
+    <div class="py-5 text-center">
+        {% if error %}
+            <h6 class="text-center alert alert-danger">{{error}}</h6>
+            <a href={% url 'profile' %} class="fw-bolder"><< Go Back</a>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Sign up Page
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+    {% if error %}
+        <h6 class="text-center alert alert-danger">{{error}}</h6>
+    {% endif %}
+    <section id="signUp">
+        <div class="container my-5">
+            <div class="signup">
+                <h1 class="mb-3 text-center">Sign Up</h1>
+                <hr class="w-50">
+                <form method="POST" class="mt-4">
+                    {% csrf_token %}
+                    <select class="form-select mb-4" name="user" aria-label="Default select example" required>
+                        <option selected>Who are you?</option>
+                        <option value="buyer">Buyer</option>
+                        <option value="seller">Seller</option>
+                    </select>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+
+                    <input type="submit" value="Sign Up" class="mt-2">
+                </form>
+                <p>Already have an account? <a href="{% url 'signin' %}">Sign in here</a></p>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

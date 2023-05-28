@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    logout page
+{% endblock %}
+
+{% block content %}
+<section id="logout" class="">
+    <div class="bg-dark text-light py-5">
+        <div class="container text-center">
+            <h1 class="">You are logged out</h1>
+            <p class="">If you want to signin again <a href="{% url 'signin' %}">chick here</a></p>
+        </div>
+    </div>
+</section>
+{% endblock %}
